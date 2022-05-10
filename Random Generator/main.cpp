@@ -6,9 +6,18 @@
 //
 
 #include <iostream>
+#include <random>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+int main() {
+
+std::random_device rd{};
+
+  std::mt19937 engine{rd()};
+  std::uniform_real_distribution<double> dis(0.0, 1.0);
+
+  double randomRealBetweenZeroAndOne = dis(engine);
+
+std::cout << randomRealBetweenZeroAndOne << "\n";
+
+  return 0;
 }
